@@ -1,0 +1,21 @@
+{% extends 'contact_manager/index.html' %}
+{% block container %}
+<div class="row">
+    <div class="col-12 mt-5">
+        <div class="card text-center bg-secondary" style="width: 30rem;">
+            <img src="..." class="card-img-top rounded-circle" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><span>First name</span>: {{contact.first_name}}</h5>
+              {% if contact.last_name %}
+                 <h5 class="card-title"><span>Last name</span>: {{contact.last_name}}</h5>
+              {% endif%}
+              <h5 class="card-title"><span>Email</span>: {{contact.email}}</h5>
+              <h5 class="card-title"><span>Phone number</span>: {{contact.phone_number}}</h5>
+              <h5 class="card-title"><span>Date</span>: {{contact.date|date:"d/m/Y"}}</h5>
+              <a href="{% url 'update' contact.id %}" class="btn btn-outline-primary">Update</a>
+              <a href="{% url 'delete' contact.id %}" class="btn btn-outline-danger">Delete</a>
+            </div>
+          </div>
+    </div>
+</div>
+{% endblock %}
