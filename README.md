@@ -4,8 +4,4 @@ account and create, delete, add, update yours contacts. Gcontact is coding in py
 
 NB: Verifie you python version
 
-If you wish to create a virtual environnement:
-    -fistly you install virtual env easily with this command ` pip install virtualenv` 
-    -secondly you create the virtual environnement with this command `virtualenv -p python {your own name of virtual env}`
-    -thirdly you activate the virtual environnement with this command `source {your own virtual env}/bin/activate`
-    -finaly if you finish to use the virtual environnement you deactivate the virtual environnement with this command `deactivate`
+If you wish to create a virtual environnement firstly you install virtual env easily with this command ` pip install virtualenv` secondly you create the virtual environnement with this command `virtualenv -p python {your own name of virtual env}` thirdly you activate the virtual environnement with this command `source {your own virtual env}/bin/activate` finaly if you finish to use the virtual environnement you deactivate the virtual environnement with this command `deactivate`
