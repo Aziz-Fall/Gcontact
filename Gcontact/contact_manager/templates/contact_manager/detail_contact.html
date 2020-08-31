@@ -1,0 +1,16 @@
+{% extends 'contact_manager/index.html' %}
+{% block container %}
+<ul class="list-group mt-5">
+  <li class="list-group-item active text-center" aria-disabled="true">
+    {{contact.first_name}}
+    {% if contact.last_name %}
+      {{contact.last_name}}
+    {% endif %}
+  </li>
+  <li class="list-group-item">{{contact.email}}</li>
+  <li class="list-group-item">{{contact.phone_number}}</li>
+  <li class="list-group-item">Crée le {{contact.date|date:'d/m/Y'}}</li>
+  <a href="{% url 'update' contact.id %}" class="btn btn-outline-primary">Update</a>
+  <a href="{% url 'delete' contact.id %}" class="btn btn-outline-danger">Delete</a>
+</ul>
+{% endblock %}

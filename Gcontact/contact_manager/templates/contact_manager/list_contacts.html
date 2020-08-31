@@ -1,0 +1,23 @@
+{% extends 'contact_manager/index.html' %}
+
+{% block container %}
+<div class="row">
+    <div class="col-6 m-1 mt-3">
+        <a href="{% url 'create_contact' %}" class="btn btn-outline-primary">Créer un contact</a>
+    </div>
+</div>
+{% load static %}
+<div class="row mt-3">
+    {% for contact in list_contacts %}
+    <div class="col-6 col-md-4 col-lg-3 m-1">
+        <div class="card text-center h-20" style="width: 18rem;">
+            <img src="{% static 'logo/user_profil_logo.jpg' %}" class="card-img-top rounded-circle" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{contact.first_name}} {{contact.last_name}}</h5>
+                <a href="{% url 'detail_contact' contact.id %}" class="btn btn-primary">Detail</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock%}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Gestion de contact</title>
+  </head>
+  <body>
+    <div class="main_container">
+        <div class="quote container">
+          <p>
+            Entre amis, il est si beau que le silence est d’or, mais le rire bon et frais l’est beaucoup plus encore.
+              <br> <strong>Friedrich Nietzsche</strong>
+          </p>
+          <p>
+            Le rôle d'un ami, c'est de se trouver à votre côté quand vous êtes dans l'erreur puisque tout le monde sera à côté de vous quand vous aurez raison.
+            <br> <strong>Mark Twain</strong>
+          </p>
+          <p>
+             L'ami vrai ce n'est pas celui qui regarde avec peine tes souffrances, c'est celui qui regarde sans envie ton bonheur !
+          </p>
+          <p>Tout comme l’immortalité de l’âme, l’amitié est trop belle pour y croire.<br>
+            <strong>Francesco Alberoni</strong>
+          </p>
+        </div>
+        <nav class="nav nav-pills flex-column flex-sm-row">
+          <a class="flex-sm-fill text-sm-center nav-link a1" href="{% url 'home' %}">Acceuil</a>
+          {% if request.user.is_authenticated %}
+              <a class="flex-sm-fill text-sm-center nav-link a2" href="{% url 'list_contacts' %}">Mes Contats</a>
+          {% else %}
+              <a class="flex-sm-fill text-sm-center nav-link a3" href="{% url 'connexion' %}">Contacts</a>
+          {% endif %}
+          {% if request.user.is_authenticated %}
+              <a class="flex-sm-fill text-sm-center nav-link a4" href="{% url 'deconnexion' %}">Déconnection</a>
+          {% else %}
+              <a class="flex-sm-fill text-sm-center nav-link a5" href="{% url 'connexion' %}">Se connecter</a>
+              <a class="flex-sm-fill text-sm-center nav-link a6" href="{% url 'subscription' %}">Inscription</a>
+          {% endif %}
+          <a class="flex-sm-fill text-sm-center nav-link a7" href="#">À propos</a>
+        </nav>
+      <div class="container", id="container">
+            {% block container %}
+            {% endblock%}
+            <p><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>

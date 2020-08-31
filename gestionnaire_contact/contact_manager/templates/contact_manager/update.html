@@ -1,8 +1,0 @@
-{% extends 'contact_manager/index.html' %}
-{% block container %}
- <form method="post" action="{% url 'update' %}">
-  {% csrf_token %}
-  {% form.as_p %}
-  <button type="submit" class="btn btn-outline-primary">Update</button>
-</form>
-{% endblock %}
