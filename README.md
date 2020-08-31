@@ -1,6 +1,6 @@
 Gcontact is a Web app that you can use to manage your contact easily. You can create your own
 account and create, delete, add, update yours contacts. Gcontact is coding in python with the powerfull framework Django. If you wish to use Gcontact you can create a virtual environnement on your computer
-, install django and throw the command `python manager.py runserver` after that you open your browser and put localhost:8000 on the url field. You will see a beautiful web site Gcontact.
+, install django and lunch the command `python manager.py runserver` after that you open your browser and put localhost:8000 on the url field. You will see a beautiful web site Gcontact.
 
 NB: Verifie you python version
 
